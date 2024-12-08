@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  django:
+    container_name: django-docker
+    
+    build:
+      context: .
+    
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 8001:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=django-*(383*#&E(-k26%pi-q1o7dcy8f+#ry4p@qkj%qdsiyrdzil80fg@hg%an(^p
+      - ALLOWED_HOSTS=localhost,127.0.0.1,django-docker
