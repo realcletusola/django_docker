@@ -12,7 +12,5 @@ services:
       - .:/usr/src/app/
     ports:
       - 8001:8000
-    environment:
-      - DEBUG=1
-      - SECRET_KEY=django-*(383*#&E(-k26%pi-q1o7dcy8f+#ry4p@qkj%qdsiyrdzil80fg@hg%an(^p
-      - ALLOWED_HOSTS=localhost,127.0.0.1,django-docker
+    env_file:
+      - .env
